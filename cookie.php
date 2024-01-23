@@ -11,6 +11,6 @@ echo $_COOKIE[$cookie_name];
 
 echo '<br>';
 
-setcookie("user", "", time() - 3600);
-var_dump($_COOKIE);
+setcookie("user", "hour", time() + 3600);
+var_dump($_COOKIE['user']);
 ?>
