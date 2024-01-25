@@ -1,5 +1,5 @@
 <div style="margin:auto; width:900px;">
-
+<h1><a href="http://localhost/PHP-Video-SMKREVIT/restoran/kategori/insert.php">Tambah Data</a></h1>
 <?php 
 
     require_once "../function.php";
