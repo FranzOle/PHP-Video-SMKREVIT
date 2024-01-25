@@ -1,8 +1,15 @@
 <div style="margin:auto; width:900px;">
 <h1><a href="http://localhost/PHP-Video-SMKREVIT/restoran/kategori/insert.php">Tambah Data</a></h1>
+
 <?php 
 
     require_once "../function.php";
+
+    if (isset($_GET['hapus'])) {
+        $id = $_GET['hapus'];
+        require_once "delete.php";
+    }
+
     $sql = "SELECT idkategori FROM tblkategori";
     $result = mysqli_query($koneksi, $sql); 
 
@@ -53,6 +60,7 @@
             echo '<tr>';
             echo '<td>' . $no++ . '</td>';
             echo '<td>' . $row['kategori'] . '</td>';
+            echo '<td><a href="?hapus='.$row['idkategori'] . '">' . 'Hapus' . '</a></td>';
             echo '</tr>';
         }
     }
