@@ -5,6 +5,11 @@
 
     require_once "../function.php";
 
+    if (isset($_GET['update'])) {
+        $id = $_GET['update'];
+        require_once "update.php";
+    }
+
     if (isset($_GET['hapus'])) {
         $id = $_GET['hapus'];
         require_once "delete.php";
@@ -51,7 +56,7 @@
     <table border="1px">
     <tr>
         <th>No</th>
-        <th>Kategori</th>
+        <th colspan=3 >Kategori</th>
     </tr>
     ';
     $no = $mulai + 1;
@@ -61,6 +66,7 @@
             echo '<td>' . $no++ . '</td>';
             echo '<td>' . $row['kategori'] . '</td>';
             echo '<td><a href="?hapus='.$row['idkategori'] . '">' . 'Hapus' . '</a></td>';
+            echo '<td><a href="?update='.$row['idkategori'].'">' . 'Update' . '</a></td>';
             echo '</tr>';
         }
     }
