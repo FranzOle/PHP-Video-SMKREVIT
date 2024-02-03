@@ -1,7 +1,7 @@
 <?php 
 
 class DB{
-   //properti 
+   // Properti 
    public $host = "127.0.0.1";
    private $user = "root";
    private $password = ""; 
