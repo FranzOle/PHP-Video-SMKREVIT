@@ -18,8 +18,13 @@
 
     $no = 1 + $mulai;
 ?>
+<div class="float-start me-4">
+    <a class="btn btn-primary" href="?f=kategori&m=insert" role="button">Tambah Data</a>
+</div>
 
 <h2>Kategori</h2>
+<p>Page ke-1<span><?php if (isset($_GET['p'])) {
+        echo $_GET['p'];} ?></span></p>
 <table class="table table-bordered w-50">
     <thead>
         <th>Nomor</th>
@@ -35,9 +40,8 @@
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $r['kategori'] ?></td>
-                <td><?php echo $r['idkategori'] ?></td>
-                <td><?php echo $r['idkategori'] ?></td>
-            </tr>
+                <td><a href="?f=kategori&m=delete&id=<?php echo $r['idkategori'] ?>">Delete Data</a></td>
+                <td><a href="?f=kategori&m=update&id=<?php echo $r['idkategori'] ?>">Update Data</a></td            </tr>
         <?php endforeach ?>
     </tbody>
 </table>
