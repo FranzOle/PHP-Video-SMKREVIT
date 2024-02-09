@@ -23,8 +23,8 @@
 </div>
 
 <h2>Kategori</h2>
-<p>Page ke-1<span><?php if (isset($_GET['p'])) {
-        echo $_GET['p'];} ?></span></p>
+<p>Page ke-<span><?php if (isset($_GET['p'])) {
+        echo $_GET['p'];}else { echo 1; } ?></span></p>
 <table class="table table-bordered w-50">
     <thead>
         <th>Nomor</th>

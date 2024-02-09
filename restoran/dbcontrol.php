@@ -18,10 +18,14 @@ class DB{
     public function getALL($sql)
     {
         $result = mysqli_query($this -> koneksi,$sql);
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($result)){
             $data[] = $row;
+        } 
+        if (!empty($data)){
+            # code...
+            return $data;
         }
-        return $data;
+
     }
 
     public function getITEM($sql){
