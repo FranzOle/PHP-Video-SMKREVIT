@@ -31,8 +31,8 @@ if (isset($_POST['opsi'])){
 </div>
 <?php 
 
-    $jumlahdata = $db -> rowCOUNT("SELECT idmenu FROM tblmenu");
-    $banyak = 4;
+    $jumlahdata = $db -> rowCOUNT("SELECT idmenu FROM tblmenu $where");
+    $banyak = 3;
 
     $halaman = ceil($jumlahdata / $banyak);
 
@@ -56,6 +56,8 @@ if (isset($_POST['opsi'])){
     <thead>
         <th>Nomor</th>
         <th>Menu</th>
+        <th>Harga</th>
+        <th>Gambar</th>
         <th>Delete</th>
         <th>Update</th>
     </thead>
@@ -68,6 +70,10 @@ if (isset($_POST['opsi'])){
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $r['menu'] ?></td>
+                <td><?php echo $r['harga'] ?></td>
+                <td><img 
+                    style="width:80px;"
+                    src="../upload/<?php echo $r['gambar'] ?>" alt=""></td>
                 <td><a href="?f=menu&m=delete&id=<?php echo $r['idmenu'] ?>">Delete Data</a></td>
                 <td><a href="?f=menu&m=update&id=<?php echo $r['idmenu'] ?>">Update Data</a></td>
             </tr>
