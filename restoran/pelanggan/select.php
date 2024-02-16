@@ -18,9 +18,9 @@
 
     $no = 1 + $mulai;
 ?>
-<div class="float-start me-4">
+<!-- <div class="float-start me-4">
     <a class="btn btn-primary" href="?f=pelangga&m=insert" role="button">Tambah Data</a>
-</div>
+</div> -->
 
 <h2>Data Pelanggan</h2>
 <p>Page ke-<span><?php if (isset($_GET['p'])) {
