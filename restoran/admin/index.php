@@ -1,7 +1,15 @@
 <?php 
-
+    session_start();
     require_once "../dbcontrol.php";
     $db = new DB;
+
+    if (!isset($_SESSION['user'])) {
+        header("location:login.php");
+    }
+    if (isset($_GET['log'])) {
+        session_destroy();
+        header("location:index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +27,9 @@
                 <h2>Restoran SMK</h2>
             </div>
             <div class="col-md-9">
-                <div class="float-end mt-4">logout</div>
+                <div class="float-end mt-4"><a href="?log=logout">logout</a></div>
+                <div class="float-end mt-4 me-4">user</div>
+                <!-- <div class="float-end mt-4 me-4"><a href="">login</a></div> -->
             </div>
         </div>
 
@@ -49,7 +59,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row fixed-bottom">
             <div class="col">
             <p class="text-center">2024 - copyright@societyco.com</p>
             </div>
