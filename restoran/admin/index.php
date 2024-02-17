@@ -28,7 +28,8 @@
             </div>
             <div class="col-md-9">
                 <div class="float-end mt-4"><a href="?log=logout">logout</a></div>
-                <div class="float-end mt-4 me-4">user</div>
+                <div class="float-end mt-4 mr-4 me-4">User: <a href="?f=user&m=updateuser&id=<?php echo $_SESSION['iduser']; ?>"><?php echo $_SESSION['user']; ?></a></div>
+                <?php //var_dump($_SESSION); ?>
                 <!-- <div class="float-end mt-4 me-4"><a href="">login</a></div> -->
             </div>
         </div>

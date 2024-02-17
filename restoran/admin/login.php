@@ -26,7 +26,7 @@
                         <label for="">Email</label>
                         <input type="email" name="email" required class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mt-2">
                         <label for="">Password</label>
                         <input type="password" name="password" required class="form-control">
                     </div>
@@ -60,7 +60,7 @@ if (isset($_POST['login'])) {
 
         $_SESSION['user'] = $row['email'];
         $_SESSION['level'] = $row['level'];
-
+        $_SESSION['iduser'] = $row['iduser'];
         header("location:index.php");
     }
 }
