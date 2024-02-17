@@ -36,7 +36,7 @@
 
         <div class="row">
             <div class="col-md-3">
-                <!-- <h2>Admin Page</h2> -->
+                <h2>Admin Page</h2>
                 <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link" href="?f=kategori&m=select">Kategori</a></li>
                     <li class="nav-item"><a class="nav-link" href="?f=menu&m=select">Menu</a></li>
