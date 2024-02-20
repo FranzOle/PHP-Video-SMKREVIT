@@ -12,6 +12,25 @@
         session_destroy();
         header("location:index.php");
     }
+
+    function cart() {
+    global $db;
+
+    $cart = 0;
+
+    foreach ($_SESSION as $key => $value) {
+        if ($key <> 'pelanggan' && $key <> 'idpelanggan') {
+            $id = substr($key, 1);
+            $sql = "SELECT * FROM tblmenu WHERE idmenu=$id";
+            $row = $db->getALL($sql);
+
+            foreach ($row as $r) {
+                $cart++;
+            }
+        }
+    }
+    return $cart;
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +52,13 @@
                 if (isset($_SESSION['pelanggan'])) {
                     echo  ' 
                         <div class="float-end mt-4"><a href="?log=logout">Logout</a></div>
-                        <div class="float-end mt-4 mr-4 me-4">Pelanggan : <a href="?f=home&m=beli">' . $_SESSION['pelanggan'] . ' </a> </div>
-                    
+                        <div class="float-end mt-4  me-4">Pelanggan : <a href="?f=home&m=beli">' . $_SESSION['pelanggan'] . ' </a> </div>
+                        <div class="float-end mt-4 me-4">Cart : ( <a href="?f=home&m=beli"> ' . cart() . ' </a> ) </div>
                     ';
                 } else {
                     echo '
-                        <div class="float-end mt-4 mr-4 me-4"><a href="?f=home&m=login">Login</a></div>
-                        <div class="float-end mt-4 mr-4 me-4"><a href="?f=home&m=daftar">Daftar</a></div>
+                        <div class="float-end mt-4 me-4"><a href="?f=home&m=login">Login</a></div>
+                        <div class="float-end mt-4 me-4"><a href="?f=home&m=daftar">Daftar</a></div>
 
                     ';
                 }
