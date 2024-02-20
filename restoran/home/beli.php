@@ -89,4 +89,13 @@ function Keranjang() {
 // var_dump($total);
 
 ?>
+
+<?php
+if (!empty($total)) {
+?>
+
 <a class="btn btn-primary" href="?f=home&m=checkout&total=<?php echo $total ?>" role="button">CHECK OUT</a>
+
+<?php
+}
+?>

@@ -18,6 +18,10 @@ if (isset($_GET['total'])) {
     } else {
         insertOrderDetail($idorder);
     }
+    kosongkanSession();
+    header("location:?f=home&m=checkout");
+} else {
+    info();
 }
 
 
@@ -67,4 +71,18 @@ function insertOrderDetail($idorder = 1) {
             echo '</pre>'; */
         }
     }
+}
+
+
+function kosongkanSession() {
+    foreach ($_SESSION as $key => $value) {
+        if ($key <> 'pelanggan' && $key <> 'idpelanggan') {
+            $id = substr($key, 1);
+            unset($_SESSION['_' . $id]);
+        }
+    }
+}
+
+function info() {
+    echo "<h3>Terima Kasih Sudah Berbelanja !</h3>";
 }
