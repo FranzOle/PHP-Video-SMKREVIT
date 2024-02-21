@@ -52,9 +52,10 @@
                 if (isset($_SESSION['pelanggan'])) {
                     echo  ' 
                         <div class="float-end mt-4"><a href="?log=logout">Logout</a></div>
-                        <div class="float-end mt-4  me-4">Pelanggan : <a href="?f=home&m=beli">' . $_SESSION['pelanggan'] . ' </a> </div>
+                        <div class="float-end mt-4 me-4">Pelanggan : <a href="?f=home&m=beli">' . $_SESSION['pelanggan'] . ' </a> </div>
                         <div class="float-end mt-4 me-4">Cart : ( <a href="?f=home&m=beli"> ' . cart() . ' </a> ) </div>
-                    ';
+                        <div class="float-end mt-4 me-4"> <a href="?f=home&m=histori"> Histori </a> </div>
+                        ';
                 } else {
                     echo '
                         <div class="float-end mt-4 me-4"><a href="?f=home&m=login">Login</a></div>
