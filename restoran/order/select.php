@@ -21,13 +21,15 @@
 <h3>Order Pembelian</h3>
 <p>Page ke-<span><?php if (isset($_GET['p'])) {
         echo $_GET['p'];}else { echo 1; } ?></span></p>
-<table class="table table-bordered w-55 mt-4">
+<table class="table table-bordered w-70 mt-4 me-3">
     <thead>
         <th>No</th>
         <th>Pelanggan</th>
         <th>Tanggal</th>
         <th>Total</th>
         <th>Bayar</th>
+        <th>Kembali</th>
+        <th>Status</th>
     </thead>
 
     <tbody>
@@ -45,6 +47,8 @@
                     <td><?php echo $r['pelanggan'] ?></td>
                     <td><?php echo $r['tglorder'] ?></td>
                     <td><?php echo $r['total'] ?></td>
+                    <td><?php echo $r['bayar']?></td>
+                    <td><?php echo $r['kembali'] ?></td>
                     <?php echo $status; ?>
                 </tr>
             <?php endforeach ?>
