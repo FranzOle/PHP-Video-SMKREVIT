@@ -7,7 +7,7 @@
             <input type="date" name="tawal" required class="form-control">
         </div>
 
-        <div class="form-group w-50">
+        <div class="ms-2 form-group w-50">
             <label for="">Tanggal Akhir</label>
             <input type="date" name="takhir" required class="form-control">
         </div>
@@ -20,7 +20,7 @@
 
 <?php
     $jumlahdata = $db -> rowCOUNT("SELECT idorderdetail FROM vorderdetail ");
-    $banyak = 4;
+    $banyak = 3;
 
     $halaman = ceil($jumlahdata / $banyak);
 
