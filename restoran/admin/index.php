@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-2">
         <div class="row">
             <div class="col-md-3">
                 <h2>Restoran SMK</h2>
@@ -36,7 +36,7 @@
 
         <div class="row">
             <div class="col-md-3">
-                <h2>Admin Page</h2>
+            <h2><a href="index.php" style="text-decoration:none;" class="text-dark">Admin Page</a></h2>
                 <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link" href="?f=kategori&m=select">Kategori</a></li>
                     <li class="nav-item"><a class="nav-link" href="?f=menu&m=select">Menu</a></li>

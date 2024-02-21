@@ -1,5 +1,3 @@
-<h1>Select Order</h1>
-
 <?php
     $jumlahdata = $db -> rowCOUNT("SELECT idorder FROM vorder ");
     $banyak = 4;
