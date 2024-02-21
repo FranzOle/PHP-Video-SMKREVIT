@@ -53,10 +53,10 @@ $no = 1 + $mulai;
 <div style="clear:both;">
 
     <?php
-    for ($i = 1; $i <= $halaman; $i++) {
-        echo '<a href="?f=home&m=produk&p=' . $i . '">' . $i . '</a>';
-        echo '&nbsp &nbsp &nbsp';
-    }
+        for ($i = 1; $i <= $halaman; $i++) {
+            echo '<a href="?f=home&m=produk&p=' . $i . $id . '">' . $i . '</a>';
+            echo '&nbsp &nbsp &nbsp';
+        }
     ?>
 
 </div>
